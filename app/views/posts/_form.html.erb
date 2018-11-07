@@ -14,8 +14,9 @@
     </div>
   <% end %>
 
-  <div class="form-group">
+  <div  class="form-group">
     <%= f.input :title, class: "form-control" %>
+    <%= f.association :categories, as: :select, multiple: true, class: "form-control" %>
   </div>
 
   <div class="form-group">

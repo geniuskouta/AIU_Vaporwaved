@@ -3,7 +3,13 @@ class PostsController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show]
   # Index action to render all posts
   def index
+    if params.has_key?(:category)
+    # you can remove @category defining if you don't need it somewhere in view
+    @category = Category.find_by_name(params[:category])
+    @posts = Post.joins(:categories).where(categories: { name: params[:category] } )
+    else
     @posts = Post.all
+    end
   end
 
   # New action for creating post
@@ -40,8 +46,9 @@ class PostsController < ApplicationController
   end
 
   # The show action renders the individual post after retrieving the the id
-  def show
+  def show 
   end
+
 
   # The destroy action removes the post permanently from the database
   def destroy
@@ -56,9 +63,9 @@ class PostsController < ApplicationController
   end
 
   private
-
+  
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, category_ids: [])
   end
 
   def find_post
