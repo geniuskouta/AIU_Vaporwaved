@@ -6,10 +6,11 @@ class PostsController < ApplicationController
     if params.has_key?(:category)
     # you can remove @category defining if you don't need it somewhere in view
     @category = Category.find_by_name(params[:category])
-    @posts = Post.joins(:categories).where(categories: { name: params[:category] } )
+    @posts = Post.joins(:categories).where(categories: { name: params[:category] } ).order("created_at DESC").page(params[:page])
     else
-    @posts = Post.all
+    @posts = Post.order("created_at DESC").page(params[:page])
     end
+    @posts = @posts.search(s_title: params[:s_title], s_category: params[:s_category]) if params[:s_title].present? || params[:s_category].present?
   end
 
   # New action for creating post
