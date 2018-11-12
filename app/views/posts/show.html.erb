@@ -3,6 +3,6 @@
   <h2 class="text-center"><%= @post.title %></h2>
   <h4 class="text-center"><%= @post.categories.pluck(:name).join(' / ') %></h4>
   <h5 class="text-center"><%= @post.created_at.strftime('%b %d, %Y') %></h5>
-  <div class="text-center"><%= raw @post.body %></div>
+  <div class="text-left"><%= raw @post.body %></div>
 </div>
 </div>
