@@ -7,12 +7,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/" style=color:#1DC8E1;opacity:0.5;>AIU Vaporwaved</a>
+      <a href="/">
+        <%= image_tag("aiu_vaporwaved_logo", :class => "logo", :alt => "logo")%>
+      </a>
     </div>
       
     <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav navbar-left">
-       <li class="active"><%= link_to 'All Posts', root_path %></li>
+       <li><%= link_to 'All Posts', root_path %></li>
         <% Category.all.each do |cat|  %>
         <li class="dropdown"><%= link_to cat.name, posts_path(category: cat.name) %></li>
         <% end %>
@@ -31,4 +33,5 @@
     </div>
     
   </div>
+  
 </nav>

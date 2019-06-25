@@ -1,8 +1,31 @@
-<div class="container">
-<div class="col-sm-10 col-sm-offset-1 col-xs-12">
+<div class="row">
+<div class="leftcolumn">
   <h2 class="text-center"><%= @post.title %></h2>
   <h4 class="text-center"><%= @post.categories.pluck(:name).join(' / ') %></h4>
   <h5 class="text-center"><%= @post.created_at.strftime('%b %d, %Y') %></h5>
   <div class="text-left"><%= raw @post.body %></div>
 </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+      <a href="https://www.instagram.com/koutadabouta/" target="_blank"><%= image_tag("cooldoggo.png", :class => "fakeimg", :alt => "koutadabouta")%></a>
+      <p>Hey there! I am Koutadabouta. Check <a href="https://www.instagram.com/koutadabouta/" target="_blank">my Instagram</a> for photos and videos of Japan!</p>
+    </div>
+    <div class="card">
+      <h3>Job Posting</h3>
+      <a href="https://connect.appen.com/qrp/public/jobs?uref=0877f167e228a139496d6c0a43bb10c0" target="_blank"><%= image_tag("appenlogo.png", :class => "fakeimg", :alt => "appen")%></a><br>
+      <div>
+        <p>Work from home with your iPhone or Android device. <a href="https://connect.appen.com/qrp/public/jobs?uref=0877f167e228a139496d6c0a43bb10c0" target="_blank">Get yourself a project</a> with the hourly rate of $19.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Current Students</h3>
+      <a href="https://aims.aiu.ac.jp/login/index.php" target="_blank">AIMS</a><br>
+      <a href="https://csw.aiu.ac.jp/campusweb/campusportal.do" target="_blank">ATOMS</a><br>
+      <a href="http://www.citationmachine.net/apa" target="_blank">APA Reference Generator</a><br>
+      <h3>My favorite browser game</h3>
+      <a href="https://agar.io/index.html" target="_blank">Agar.io</a><br>
+      <a href="https://www.sting.co.jp/macho/" target="_blank">Macho De Pon</a><br>
+    </div>
+  </div>
 </div>

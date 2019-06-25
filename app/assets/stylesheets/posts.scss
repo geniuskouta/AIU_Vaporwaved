@@ -1,3 +1,128 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+p {
+  padding: 5px 10px;
+}
+
+.description h1 {
+  color: black;
+  padding-top: 10px;
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 300;
+  letter-spacing: 1.1px;
+  text-align: center;
+  opacity: 0.5;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+#description {
+  display: flex;
+  justify-content: space-around;
+}
+
+.sectiontitle h2 {
+    font-family: Montserrat;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 3.4px;
+    text-align: left;
+    color: #4a4a4a;
+    margin: 15px;
+    padding: 10px;
+}
+
+.description {
+  margin-bottom: 15px;
+  background-color: #ffffff;
+}
+
+.description p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 15px;
+}
+
+
+.icon-learn {
+  width: 150px;
+  height: 150px;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn { 
+  float: left;
+  padding: 0px 20px;
+  width: 75%;
+}
+
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Clear floats after the columns */
+.row {
+  width: 100%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn { 
+    width: 100%;
+    padding: 0px;
+  }
+  
+  .row p{
+  padding-left: 10%;
+  }
+  
+  .row h1{
+    padding: 0% 10%;
+  }
+  
+  .row h2{
+    padding: 0% 10%;
+  }
+
+  
+}

@@ -1,108 +1,99 @@
-
-<div class="container">
-<div class="dropdown">
-  <button class="dropbtn">Current Students</button>
-  <div class="dropdown-content">
-    <a target="_blank" href="https://csw.aiu.ac.jp/campusweb/campusportal.do;jsessionid=6D66BB2893F4EB95DF9E511B1A8F4712">ATOMS</a>
-    <a target="_blank" href="https://aims.aiu.ac.jp/login/index.php">AIMS</a>
-    <a target="_blank" href="https://www.pornhub.com/">PornHub</a>
+<div>
+  <main>
+  <div class="cover">
+    <h1>AIU Vaporwaved</h1>
   </div>
-</div>
-  <section class="hero" id="hero">
-    <h2 class="hero_header">AIU <span class="light">Vaporwaved</span></h2>
-    <p class="tagline">How to get around while living in akita</p>
-  </section>
-</div>
-</br>
-<div class="container">
+  </main>
+    <div class="description">
+      <h1>Welcome to AIU Vaporwaved</h1>
+      <p>This is not an official school website of AIU. Yet, this is made to help those who are new to campus on many things. AIU Vaporwaved offers the content tailored for people who ended up living in Akita. Welcome to the middle of nowhere!</p>
+    </div>
+
+
+
 <div class="text-center">
+  
 <form action="<%= posts_path %>" method="get" class="form-inline">
   <input class="form-control" type="text" name="s_title" value="<%= request[:s_title] %>"><p></p>
   <button class="btn btn-default" type="submit" style=color:grey;>Search</button>
 </form>
-</div>
-</div>
-</br>
-<div class="timeline">
-<div class="col-sm-10 col-sm-offset-1 col-xs-13">
-    <% @posts.each do |post| %>
-    <div class="col-xs-12 text-center">
-      <div class="text-center">
-        <h2><%= post.title %></h2>
-        <h4><%= post.categories.pluck(:name).join(' / ')%></h4>
-        <h6><%= post.created_at.strftime('%b %d, %Y') %></h6>
-      </div>
-      <div class="text-left">
-        <%= raw post.body.truncate(358) %>
-      </div>
-      <div class="text-center">
-        <%= link_to "READ MORE", post_path(post) %>
-      </div>
-      <% if admin_signed_in? %>
-        <%= link_to "Show", post_path(post), class: "btn btn-primary" %>
-        <%= link_to "Edit", edit_post_path(post), class: "btn btn-default" %>
-        <%= link_to "Delete", post_path(post), class: "btn btn-danger", data: {:confirm => "Are you sure?"}, method: :delete %>
-      <% end %>
-      <hr />
-    </div>
 
+</div>
+
+    <div class="row">
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+      <a href="https://www.instagram.com/koutadabouta/" target="_blank"><%= image_tag("cooldoggo.png", :class => "fakeimg", :alt => "koutadabouta")%></a>
+      <p>Hey there! I am Koutadabouta. Check <a href="https://www.instagram.com/koutadabouta/" target="_blank">my Instagram</a> for photos and videos of Japan!</p>
+    </div>
+    <div class="card">
+      <h3>Job Posting</h3>
+      <a href="https://connect.appen.com/qrp/public/jobs?uref=0877f167e228a139496d6c0a43bb10c0" target="_blank"><%= image_tag("appenlogo.png", :class => "fakeimg", :alt => "appen")%></a><br>
+      <div>
+        <p>Work from home with your iPhone or Android device. <a href="https://connect.appen.com/qrp/public/jobs?uref=0877f167e228a139496d6c0a43bb10c0" target="_blank">Get yourself a project</a> with the hourly rate of $19.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Current Students</h3>
+      <a href="https://aims.aiu.ac.jp/login/index.php" target="_blank">AIMS</a><br>
+      <a href="https://csw.aiu.ac.jp/campusweb/campusportal.do" target="_blank">ATOMS</a><br>
+      <a href="http://www.citationmachine.net/apa" target="_blank">APA Reference Generator</a><br>
+      <h3>My favorite browser game</h3>
+      <a href="https://agar.io/index.html" target="_blank">Agar.io</a><br>
+      <a href="https://www.sting.co.jp/macho/" target="_blank">Macho De Pon</a><br>
+    </div>
+  </div>
+<% @posts.each do |post| %>
+    <div class="leftcolumn">
+    <div class="card">
+      <h2><%= post.title %></h2>
+      <h5><%= post.categories.pluck(:name).join(' / ')%></h5>
+      <h6><%= post.created_at.strftime('%b %d, %Y') %></h6>
+      <p><%= raw post.body.truncate(200) %></p>
+      <p>  <%= link_to "READ MORE", post_path(post) %></p>
+      <% if admin_signed_in? %>
+        <%= link_to "Show", post_path(post) %> /
+        <%= link_to "Edit", edit_post_path(post) %> /
+        <%= link_to "Delete", post_path(post), data: {:confirm => "Are you sure?"}, method: :delete %>
+      <% end %>
+      <hr>
+    </div>
+    
+    </div>
     
     <% end %>
-    <div class="container">
-
-    <p class="text_column well">This is not an official school website of AIU. Yet, this is made to help those who are new to the campus on many things: how to get a SIM card, send packages, find which store sells what you want such as coconut oil, find places to visit on weekends, and so on. It is tough to google search all these things especially when you are not fluent in Japanese. There are some articles written in English that tip on foreigners living in Japan, but this website is specifically for you guys who ended up living in Akita. Welcome to the middle of nowhere! </p>
-    
+    <div class="text-center">
+    <%= paginate @posts %>
     </div>
     
-    <div class="container">
-    <div class="text-left"><%= paginate @posts %></div>
-    </div>
-    <div class="col-xs-12 text-center">
-    <div class="gallery">
-      
-              <div class="thumbnail">
-                <a href="/posts?category=Student"><h1 class="stats">STUDENT</h1></a>
-                <a href="/posts?category=Student"><img src="https://drive.google.com/uc?id=1-tPvd7bnODktLA7tIMqd06RmjUb_penp" width="2048" height="1152" alt="Student"/></a>
-          <h4 data_temp_dwid="1">Vaporwaved</h4>
-                <p>Classes, roommates, necessity shopping, etc</p>
-              </div>
-              
-              <div class="thumbnail">
-                <a href="/posts?category=Vacation"><h1 class="stats" data_temp_dwid="1">VACATION<br data_temp_dwid="2">
-                </h1></a>
-                <a href="/posts?category=Vacation"><img src="https://drive.google.com/uc?id=1d0ppM3FxlfXuoFJGCQYY_Rcxpd_9fQFG" width="1006" height="747" alt="Vacation"/></a>
-          <h4>Vaporwaved</h4>
-                <p>Travel destinations, hotels, transportation, etc...</p>
-              </div>
-              
-              <div class="thumbnail">
-                <a href="/posts?category=Night+Life"><h1 class="stats">NIGHT LIFE</h1></a>
-          	  <a href="/posts?category=Night+Life"><img src="https://drive.google.com/uc?id=1hUIttdZTdWWzfCbjcFPfoz9I1bTEnV7E" width="982" height="667" alt="Night Life"/></a>
-          <h4>Vaporwaved</h4>
-                <p>Clubs, parties, contraceptives, etc...</p>
-              </div>
-              
-              <div class="thumbnail">
-         <a href="/posts?category=Local+Life"><h1 class="stats">LOCAL LIFE</h1></a>
-          	  <a href="/posts?category=Local+Life"><img src="https://drive.google.com/uc?id=1Ycj-LnPIj04SYFL8NWhFxHMfjxUS2QGP" width="2048" height="1536" alt="Local Life"/></a>
-          <h4>Vaporwaved</h4>
-                <p>Local transportation, restaurants, stores, etc...</p>
-              </div>
-              
-    </div>
-    </div>
-<div class="col-xs-12 text-center">
-    <section class="footer_banner" id="contact">
-    <h2 class="hidden">Footer Banner Section </h2>
-    <p class="hero_header">FOR THE LATEST NEWS &amp; UPDATES</p>
-    <a target="_blank" href="https://www.facebook.com/aiuvaporwaved"><div class="button">Boop to Sub!</div></a>
-    
-  </section>
-  <!-- Copyrights Section -->
-  <div class="copyright">&copy;2018 - <strong>AIU Vaporwaved</strong></div>
 </div>
 
+<div class="sectiontitle">
+    <h2>Things to know</h2>
 </div>
-</div>
-  
-</div>
+
+<section id=description>
+          <div>
+          <a href="/posts?category=Student">
+            <%= image_tag("student2.png", :class => "icon-learn", :alt => "Student life")%>
+            </a>
+          </div>
+          <div>
+          <a href="/posts?category=Vacation">
+            <%= image_tag("vacation2.png", :class => "icon-learn", :alt => "Vacation")%>
+            </a>
+          </div>
+          <div>
+          <a href="/posts?category=Local+Life">
+            <%= image_tag("local2.png", :class => "icon-learn", :alt => "Local life")%>
+            </a>
+          </div>
+          <div>
+          <a href="/posts?category=Night+Life">
+            <%= image_tag("night2.png", :class => "icon-learn", :alt => "Night life")%>
+            </a>
+          </div>
+</section>
+
+    
