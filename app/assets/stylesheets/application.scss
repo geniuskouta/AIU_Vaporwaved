@@ -21,6 +21,17 @@
   padding: 10px;
 }
 
+.read-more {
+	border: 1px solid pink;
+	color: pink;
+	padding: 1px 3px;
+}
+
+.read-more:hover {
+	text-decoration: none;
+	color: pink;
+}
+
 h1 {
 	font-family: 'Dokdo', cursive;
 }

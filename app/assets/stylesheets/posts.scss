@@ -83,7 +83,7 @@ p {
 /* Fake image */
 .fakeimg {
   width: 100%;
-  padding: 20px;
+  padding: 10px;
 }
 
 /* Add a card effect for articles */
@@ -91,7 +91,19 @@ p {
   background-color: white;
   padding: 20px;
   margin-top: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 10%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-post {
+  background-color: white;
+  padding: 0 0 0 5%;
+  margin-top: 10px;
 }
 
 /* Clear floats after the columns */
@@ -114,17 +126,28 @@ p {
     padding: 0px;
   }
   
-  .row p{
-  padding-left: 10%;
+
+  .fakeimg {
+  padding: 5px;
   }
   
-  .row h1{
-    padding: 0% 10%;
-  }
-  
-  .row h2{
-    padding: 0% 10%;
+
+  .row{
+    p{
+      padding-left: 10%;
+    }
+    h1, h2, h3, h4, h5, h6{
+      padding: 0% 10%;
+    }
+    
+    .link{
+      padding: 0% 10%;
+    }
+    
+    #hide{
+      display: none;
+    }
+    
   }
 
-  
 }

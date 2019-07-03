@@ -22,36 +22,38 @@
 
     <div class="row">
   <div class="rightcolumn">
-    <div class="card">
+    <div class="card" id="hide">
       <h2>About Me</h2>
       <a href="https://www.instagram.com/koutadabouta/" target="_blank"><%= image_tag("https://drive.google.com/uc?export=view&id=1BwpQWsEnzHSBVif3my05_BsqXaqWD_rL", :class => "fakeimg", :alt => "koutadabouta")%></a>
       <p>Hey there! I am Koutadabouta. Check <a href="https://www.instagram.com/koutadabouta/" target="_blank">my Instagram</a> for photos and videos of Japan!</p>
     </div>
-    <div class="card">
+    <div class="card" id="hide">
       <h3>Job Posting</h3>
       <a href="https://connect.appen.com/qrp/public/jobs?uref=0877f167e228a139496d6c0a43bb10c0" target="_blank"><%= image_tag("https://drive.google.com/uc?export=view&id=1KEAQDvBikcm7WgNJemUzf-tnXOC1Ix9a", :class => "fakeimg", :alt => "appen")%></a><br>
       <div>
         <p>Work from home with your iPhone or Android device. <a href="https://connect.appen.com/qrp/public/jobs?uref=0877f167e228a139496d6c0a43bb10c0" target="_blank">Get yourself a project</a> with the hourly rate of $19.</p>
       </div>
     </div>
-    <div class="card">
+    <div class="card" id="hide">
       <h3>Current Students</h3>
-      <a href="https://aims.aiu.ac.jp/login/index.php" target="_blank">AIMS</a><br>
-      <a href="https://csw.aiu.ac.jp/campusweb/campusportal.do" target="_blank">ATOMS</a><br>
-      <a href="http://www.citationmachine.net/apa" target="_blank">APA Reference Generator</a><br>
+      <a href="https://aims.aiu.ac.jp/login/index.php" target="_blank" class="link">AIMS</a><br>
+      <a href="https://csw.aiu.ac.jp/campusweb/campusportal.do" target="_blank" class="link">ATOMS</a><br>
+      <a href="http://www.citationmachine.net/apa" target="_blank" class="link">APA Reference Generator</a><br>
       <h3>My favorite browser game</h3>
-      <a href="https://agar.io/index.html" target="_blank">Agar.io</a><br>
-      <a href="https://www.sting.co.jp/macho/" target="_blank">Macho De Pon</a><br>
+      <a href="https://agar.io/index.html" target="_blank" class="link">Agar.io</a><br>
+      <a href="https://www.sting.co.jp/macho/" target="_blank" class="link">Macho De Pon</a><br>
     </div>
   </div>
+  
+
 <% @posts.each do |post| %>
     <div class="leftcolumn">
-    <div class="card">
+    <div class="card-post">
       <h2><%= post.title %></h2>
       <h5><%= post.categories.pluck(:name).join(' / ')%></h5>
       <h6><%= post.created_at.strftime('%b %d, %Y') %></h6>
       <p><%= raw post.body.truncate(200) %></p>
-      <p>  <%= link_to "READ MORE", post_path(post) %></p>
+      <p>  <%= link_to "READ MORE", post_path(post), class: "read-more" %></p>
       <% if admin_signed_in? %>
         <%= link_to "Show", post_path(post) %> /
         <%= link_to "Edit", edit_post_path(post) %> /
