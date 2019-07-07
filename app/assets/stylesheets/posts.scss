@@ -66,12 +66,23 @@ p {
 
 /* Create two unequal columns that floats next to each other */
 /* Left column */
+
+
 .leftcolumn { 
   float: left;
   padding: 0px 20px;
   width: 75%;
+  background: white;
 }
 
+/*
+.timeline{
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 500px;
+  margin: 0px;
+}
+*/
 
 /* Right column */
 .rightcolumn {
@@ -88,16 +99,14 @@ p {
 
 /* Add a card effect for articles */
 .card {
-  background-color: white;
   padding: 20px;
   margin-top: 20px;
   margin-bottom: 10%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  //box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .card-post {
@@ -126,6 +135,10 @@ p {
     padding: 0px;
   }
   
+/*  .timeline{
+    height: 100%;
+  }
+*/  
 
   .fakeimg {
   padding: 5px;

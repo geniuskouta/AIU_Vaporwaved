@@ -21,11 +21,12 @@
 </div>
 
     <div class="row">
-  <div class="rightcolumn">
+  <div class="rightcolumn" id="hide">
     <div class="card" id="hide">
       <h2>About Me</h2>
       <a href="https://www.instagram.com/koutadabouta/" target="_blank"><%= image_tag("https://drive.google.com/uc?export=view&id=1BwpQWsEnzHSBVif3my05_BsqXaqWD_rL", :class => "fakeimg", :alt => "koutadabouta")%></a>
       <p>Hey there! I am Koutadabouta. Check <a href="https://www.instagram.com/koutadabouta/" target="_blank">my Instagram</a> for photos and videos of Japan!</p>
+    <hr>
     </div>
     <div class="card" id="hide">
       <h3>Job Posting</h3>
@@ -33,7 +34,9 @@
       <div>
         <p>Work from home with your iPhone or Android device. <a href="https://connect.appen.com/qrp/public/jobs?uref=0877f167e228a139496d6c0a43bb10c0" target="_blank">Get yourself a project</a> with the hourly rate of $19.</p>
       </div>
+      <hr>
     </div>
+    
     <div class="card" id="hide">
       <h3>Current Students</h3>
       <a href="https://aims.aiu.ac.jp/login/index.php" target="_blank" class="link">AIMS</a><br>
@@ -42,8 +45,10 @@
       <h3>My favorite browser game</h3>
       <a href="https://agar.io/index.html" target="_blank" class="link">Agar.io</a><br>
       <a href="https://www.sting.co.jp/macho/" target="_blank" class="link">Macho De Pon</a><br>
+      <hr>
     </div>
   </div>
+  
   
 
 <% @posts.each do |post| %>
@@ -61,13 +66,13 @@
       <% end %>
       <hr>
     </div>
-    
     </div>
-    
     <% end %>
+
     <div class="text-center">
     <%= paginate @posts %>
     </div>
+    
     
 </div>
 
