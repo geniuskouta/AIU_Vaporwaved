@@ -1,5 +1,7 @@
 {
   "name": "AIU-Blog",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "heroku": "^7.26.2"
+  }
 }
