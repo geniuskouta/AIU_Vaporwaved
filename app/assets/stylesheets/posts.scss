@@ -75,14 +75,11 @@ p {
   background: white;
 }
 
-/*
+
 .timeline{
-  overflow-x: hidden;
-  overflow-y: auto;
-  height: 500px;
-  margin: 0px;
+  margin: 0 10%;
 }
-*/
+
 
 /* Right column */
 .rightcolumn {
@@ -136,10 +133,9 @@ p {
     padding: 0px;
   }
   
-/*  .timeline{
-    height: 100%;
+  .timeline{
+    margin: 0 3%;
   }
-*/  
 
   .fakeimg {
   padding: 5px;
