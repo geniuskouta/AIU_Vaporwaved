@@ -81,6 +81,7 @@ p {
 }
 
 
+
 /* Right column */
 .rightcolumn {
   float: left;
@@ -131,6 +132,10 @@ p {
   .leftcolumn, .rightcolumn { 
     width: 100%;
     padding: 0px;
+  }
+  
+  .timeline img{
+    margin: 2% 5%;
   }
   
   .timeline{
