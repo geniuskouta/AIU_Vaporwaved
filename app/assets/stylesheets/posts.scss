@@ -138,6 +138,10 @@ p {
   }
   
   .leftcolumn{
+    margin: 0 5%;
+  }
+  
+  .right-column{
     margin-left: 5%;
   }
   
@@ -156,7 +160,7 @@ p {
 
   .row{
     p{
-      padding-left: 5%;
+      padding: 0 5%;
     }
     h1, h2, h3, h4, h5, h6{
       padding: 0 5%;
