@@ -137,6 +137,10 @@ p {
     padding: 0px;
   }
   
+  .leftcolumn{
+    margin-left: 3%;
+  }
+  
   .timeline img{
     margin: 2% 5%;
   }
@@ -152,14 +156,14 @@ p {
 
   .row{
     p{
-      padding-left: 10%;
+      padding-left: 5%;
     }
     h1, h2, h3, h4, h5, h6{
-      padding: 0% 10%;
+      padding: 0 5%;
     }
     
     .link{
-      padding: 0% 10%;
+      padding: 0 5%;
     }
     
     #hide{
