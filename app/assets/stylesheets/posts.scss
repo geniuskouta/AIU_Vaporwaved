@@ -49,7 +49,6 @@ p {
 
 .description {
   margin-bottom: 15px;
-  background-color: #ffffff;
 }
 
 .description p {
@@ -71,8 +70,9 @@ p {
 .leftcolumn { 
   float: left;
   padding: 0px 20px;
-  width: 75%;
-  background: white;
+  width: 65%;
+  margin-left: 20px;
+  border-radius: 30px;
 }
 
 
@@ -96,12 +96,16 @@ p {
 }
 
 /* Add a card effect for articles */
+
+
+
 .card {
   padding: 20px;
   margin-top: 20px;
   margin-bottom: 10%;
   transition: 0.3s;
   border-radius: 30px;
+  background: white;
 }
 
 .card:hover {
@@ -109,7 +113,6 @@ p {
 }
 
 .card-post {
-  background-color: white;
   padding: 0 0 0 5%;
   margin-top: 10px;
 }
